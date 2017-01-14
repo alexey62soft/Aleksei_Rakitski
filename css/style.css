@@ -21,6 +21,14 @@ body {
     position: relative;
 }
 
+span.color-pink {
+    color: #ff6766;
+}
+
+span.color-gainsboro {
+    color: gainsboro;
+}
+
 /*-----------HEADER LEVEL ONE------------*/
 
 .header-level-one {
@@ -179,6 +187,7 @@ ul.language-list {
     background-color: #f9f9f9;
     width: 290px;
     box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
 .cat-menu a{
@@ -235,15 +244,29 @@ ul.language-list {
 }
 
 .header-level-three .menu-center {
-    margin: 23px auto;
+    border-top: 5px solid white;
     width: 66%;
+    height: 61px;
     float: left;
 }
 
 .header-level-three .menu-center li {
-    padding: 0 32px;
+    width: 16%;
+    padding: 18px 3px 23px 2px;
+    text-align: center;
     display: inline-block;
     float: left;
+    position: relative;
+}
+
+.header-level-three .menu-center li:hover:before {
+    content: '';
+    position: absolute;
+    background-color: black;
+    height: 5px;
+    width: 42px;
+    left: 43px;
+    top: -5px;
 }
 
 .header-level-three .menu-right {
@@ -268,6 +291,7 @@ ul.language-list {
     top: 66px;
     left: -142px;
     box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
 .cart-menu a{
@@ -355,4 +379,102 @@ ul.language-list {
     color: #e8e8e8;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+/*-----------BANNER------------*/
+
+.banner {
+    background-image: url(../images/banner/banner_bg.png);
+    height: 500px;
+}
+
+.banner .description-left {
+    padding: 110px 0;
+    width: 50%;
+    position: relative;
+}
+
+.banner .description-left > span{
+    display: block;
+}
+
+.banner .description-left > span.name{
+    font-weight: bolder;
+    font-size: 65px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #fff;
+}
+
+.banner .description-left > span.description{
+    font-weight: bolder;
+    font-size: 16px;
+    position: relative;
+}
+
+.banner .description-left > span.description:after {
+    content: '';
+    position: absolute;
+    background-color: gainsboro;
+    height: 5px;
+    width: 100px;
+    left: 5px;
+    top: 35px;
+}
+
+.banner .description-left .additions{
+    font-weight: bold;
+    font-size: 16px;
+    margin: 35px 0;
+}
+
+.banner .description-left .additions > span{
+    display: inline;
+}
+
+.banner .description-left .button {
+    background-color: transparent;
+    border: 3px solid #ff6766;
+    padding: 10px 15px;
+    text-align: center;
+    height: 20px;
+    float: left;
+}
+
+.banner .description-left .button a {
+    font-weight: bolder;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.offer-tag {
+    background: url("../images/banner/circle.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    width: 103px;
+    height: 106px;
+    left: 92%;
+    position: absolute;
+    top: 20%;
+    text-align: center;
+}
+
+.offer-tag:before {
+    display: inline-block;
+    content: "";
+    border-left: 2px solid #d1d1d1;
+    height: 98%;
+    position: absolute;
+    top: -80%;
+    left: 44%;
+}
+
+.offer-tag .text {
+    margin: 26%;
+    width: 40%;
+    display: block;
+}
+
+.offer-tag .text > span{
+    display: block;
+    font-weight: bold;
+    color: white;
 }
