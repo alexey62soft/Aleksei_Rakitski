@@ -1,0 +1,320 @@
+/*-----------GENERAL------------*/
+
+body {
+    font-family: 'Cabin', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+   }
+
+.wrapper {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.fa {
+    font-size: 17px;
+}
+
+.floatright {
+    float: right;
+    position: relative;
+}
+
+/*-----------HEADER LEVEL ONE------------*/
+
+.header-level-one {
+    height: 17px;
+    color: #e8e8e8;
+    background: none repeat scroll 0 0 #212121;
+    padding: 12px 0;
+}
+
+.header-level-one a {
+    color: #e8e8e8;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.header-level-one i {
+    font-size: 17px;
+    margin-right: 7px;
+}
+
+.header-level-one a:hover, .header-level-one > a:active {
+    color: #ff6766;
+    text-decoration: none;
+}
+
+.part-section {
+    width: 50%;
+    float: left;
+    padding-bottom: -8px;
+}
+
+.part-section > img {
+    float: left;
+    margin-right: 10px;
+}
+
+.part-section p {
+    color: #e8e8e8;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    float: left;
+}
+
+ul.language-list {
+    margin: 0 15px;
+    font-size: 12px;
+    display: inline-block;
+    float: left;
+}
+
+/*-----------HEADER LEVEL TWO------------*/
+
+.header-level-two {
+    height: 32px;
+    color: #e8e8e8;
+    padding: 40px 0;
+}
+
+.header-level-two a {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.header-level-two a:hover, .header-level-two a:active {
+    color: black;
+    text-decoration: underline;
+}
+
+.search-wrapper {
+    width: 25%;
+    float: left;
+}
+
+.search-wrapper input[type="text"] {
+    border: medium none;
+    color: #000;
+    font-weight: 500;
+    margin-left: 13px;
+    padding-left: 10px;
+    padding-top: 3px;
+    text-transform: uppercase;
+}
+
+.header-level-two .logo {
+    text-align: center;
+    width: 50%;
+    float: left;
+}
+
+.buttons-wrapper {
+    margin: auto 0;
+    width: 25%;
+    float: left;
+}
+
+.buttons-wrapper li {
+    margin: 0 10px;
+    display: inline-block;
+    float: right;
+}
+
+.comments-count {
+    background: url("../images/header-level-two/wishlist_bg.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 22px;
+    left: 76px;
+    position: absolute;
+    top: -23px;
+    width: 26px;
+    text-align: center;
+}
+
+.comments-count > span {
+    color: white;
+}
+
+/*-----------HEADER LEVEL THREE------------*/
+
+.header-level-three {
+    height: 66px;
+    color: #e8e8e8;
+    background: none repeat scroll 0 0 #ff6766;
+}
+
+.header-level-three a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.header-level-three .menu-left {
+    padding: 23px 0;
+    background: none repeat scroll 0 0 #f06160;
+    width: 17%;
+    position: relative;
+    float: left;
+}
+
+.header-level-three .menu-left a{
+    margin: auto 5px;
+}
+
+.header-level-three .menu-left a span{
+    margin-left: 15px;
+}
+
+.header-level-three .menu-left .fa-bars {
+    margin-left: 65px;
+}
+
+.cat-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 290px;
+    box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+}
+
+.cat-menu a{
+    color: black;
+    display: inline-block;
+    width: 220px;
+}
+
+.menu-list {
+    color: #ff6766;
+    list-style: disc;
+    margin: 12px 0;
+    margin-left: 35px;
+}
+
+.shirts-button .menu-list li {
+    margin-left: 35px;
+}
+
+.menu-list li {
+    padding: 10px 0;
+    position: relative;
+}
+
+.menu-list li:after {
+    content: '';
+    position: absolute;
+    background-color: rgba(0,0,0,0.2);
+    height: 1px;
+    width: 250px;
+    left: -15px;
+    top: 40px;
+}
+
+.menu-list li:last-child:after {
+    height: 0px;
+}
+
+.category-menu {
+    top: 66px;
+}
+
+.shirts-menu {
+    top: -12px;
+    left: 220px;
+}
+
+.header-level-three .menu-left:hover .category-menu {
+    display: block;
+}
+
+.shirts-button:hover .shirts-menu {
+    display: block;
+}
+
+.header-level-three .menu-center {
+    margin: 23px auto;
+    width: 66%;
+    float: left;
+}
+
+.header-level-three .menu-center li {
+    padding: 0 32px;
+    display: inline-block;
+    float: left;
+}
+
+.header-level-three .menu-right {
+    padding: 23px 0;
+    background: none repeat scroll 0 0 #f06160;
+    width: 17%;
+    position: relative;
+    float: left;
+}
+
+.menu-right a > img {
+    float: left;
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.cart-menu {
+    display: block;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 340px;
+    top: 66px;
+    left: -142px;
+    box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+}
+
+.cart-menu a{
+    color: black;
+}
+
+.header-level-three .menu-right:hover .cart-menu {
+    display: block;
+}
+
+.cart-item {
+    padding: 14px;
+    padding-right: 50px;
+    height: 90px;
+}
+
+.cart-item:after {
+    content: '';
+    position: absolute;
+    background-color: rgba(0,0,0,0.2);
+    height: 1px;
+    width: 230px;
+    left: 0px;
+    top: 0px;
+}
+
+.cart-item > .item-left {
+    width: 37%;
+    float: left;
+}
+
+.cart-item .item-left img {
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+.cart-item > .item-right {
+    width: 63%;
+    float: left;
+    position: relative;
+}
+
+.close-icon {
+    color: black;
+    height: 14px;
+    top: 0px;
+    left: 195px;
+    position: absolute;
+    width: 14px;
+    text-align: center;
+}
