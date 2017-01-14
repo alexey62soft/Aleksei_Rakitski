@@ -1,6 +1,7 @@
 /*-----------GENERAL------------*/
 
 body {
+    background: none repeat scroll 0 0 #f7f8f9;
     font-family: 'Cabin', sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
@@ -105,6 +106,7 @@ ul.language-list {
 }
 
 .search-wrapper input[type="text"] {
+    background: none repeat scroll 0 0 #f7f8f9;
     border: medium none;
     color: #000;
     font-weight: 500;
@@ -473,8 +475,56 @@ ul.language-list {
     display: block;
 }
 
-.offer-tag .text > span{
+.offer-tag .text > span {
     display: block;
     font-weight: bold;
     color: white;
+}
+
+/*-----------FEATURES------------*/
+
+.features {
+    height: 80px;
+    padding-top: 36px;
+    position: relative;
+}
+
+.features ul li {
+    display: block;
+    float: left;
+    width: 25%;
+    height: 40px;
+}
+
+.features ul li > img {
+    height: 40px;
+    float: left;
+    margin-right: 10px;
+}
+
+.features ul li p {
+    font-weight: bold;
+    padding-right: 20px;
+}
+
+.features ul li:last-child p{
+    padding-top: 10px;
+}
+
+.features .wrapper:after {
+    position: absolute;
+    content: "";
+    bottom: -2px;
+    left: 7%;
+    border-bottom: 2px dotted #999;
+    width: 86%;
+}
+
+.features:after {
+    position: absolute;
+    content: "";
+    bottom: 1px;
+    left: 7%;
+    border-bottom: 2px dotted #999;
+    width: 86%;
 }
