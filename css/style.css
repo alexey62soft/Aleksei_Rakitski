@@ -5,7 +5,13 @@ body {
     font-family: 'Cabin', sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
+    text-transform: uppercase;
    }
+
+a {
+    color: #e8e8e8;
+    text-decoration: none;
+}
 
 .wrapper {
 	max-width: 1170px;
@@ -30,6 +36,14 @@ span.color-gainsboro {
     color: gainsboro;
 }
 
+.multi-line {
+    border-bottom: 2px solid #ff6766;
+    border-top: 1px solid #ff6766;
+    height: 5px;
+    margin: 0 auto 20px;
+    width: 40px;
+}
+
 /*-----------HEADER LEVEL ONE------------*/
 
 .header-level-one {
@@ -41,8 +55,6 @@ span.color-gainsboro {
 
 .header-level-one a {
     color: #e8e8e8;
-    text-decoration: none;
-    text-transform: uppercase;
 }
 
 .header-level-one i {
@@ -52,7 +64,6 @@ span.color-gainsboro {
 
 .header-level-one a:hover, .header-level-one > a:active {
     color: #ff6766;
-    text-decoration: none;
 }
 
 .part-section {
@@ -70,7 +81,6 @@ span.color-gainsboro {
     color: #e8e8e8;
     font-size: 12px;
     font-weight: 400;
-    text-transform: uppercase;
     float: left;
 }
 
@@ -91,8 +101,6 @@ ul.language-list {
 
 .header-level-two a {
     color: black;
-    text-decoration: none;
-    text-transform: uppercase;
 }
 
 .header-level-two a:hover, .header-level-two a:active {
@@ -113,7 +121,6 @@ ul.language-list {
     margin-left: 13px;
     padding-left: 10px;
     padding-top: 3px;
-    text-transform: uppercase;
 }
 
 .header-level-two .logo {
@@ -159,8 +166,6 @@ ul.language-list {
 .header-level-three a {
     color: white;
     font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase;
 }
 
 .header-level-three .menu-left {
@@ -266,8 +271,8 @@ ul.language-list {
     position: absolute;
     background-color: black;
     height: 5px;
-    width: 42px;
-    left: 43px;
+    width: 101%;
+    left: 0;
     top: -5px;
 }
 
@@ -379,8 +384,6 @@ ul.language-list {
 
 .cart-button a {
     color: #e8e8e8;
-    text-decoration: none;
-    text-transform: uppercase;
 }
 
 /*-----------BANNER------------*/
@@ -445,8 +448,6 @@ ul.language-list {
 .banner .description-left .button a {
     font-weight: bolder;
     color: black;
-    text-decoration: none;
-    text-transform: uppercase;
 }
 
 .offer-tag {
@@ -527,4 +528,51 @@ ul.language-list {
     left: 7%;
     border-bottom: 2px dotted #999;
     width: 86%;
+}
+
+/*-----------TRENDING CLOTHING------------*/
+
+.trending-clothing {
+    padding: 95px 0;
+}
+
+.trending-clothing .description > span {
+    text-align: center;
+    font-weight: bold;
+    display: block;
+}
+
+.trending-clothing .description .name, .trending-clothing .content .select {
+    text-align: center;
+    font-weight: bold;
+    display: block;
+}
+
+.trending-clothing .description .name {
+    font-size: 26px;
+}
+
+.trending-clothing .content .select {
+    margin-bottom: 42px;
+}
+
+.trending-clothing .content .select a {
+    margin: 0px 5px;
+    font-weight: bold;
+}
+
+.trending-clothing .content .select a.active {
+    color: black;
+}
+
+.trending-clothing .mySlides{
+    height: 360px;
+}
+
+.trending-clothing .mySlides .item {
+    background-color: white;
+    margin: 15px;
+    width: 260px;
+    height: 342px;
+    float: left;
 }
