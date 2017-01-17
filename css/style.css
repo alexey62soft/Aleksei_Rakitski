@@ -43,23 +43,26 @@ span.color-gainsboro {
   width: 40px;
 }
 
-.item {
+.mySlide {
+  height: 430px;
+}
+.mySlide .item {
   background-color: white;
   text-align: center;
   margin: 15px;
   width: 260px;
-  height: 430px;
+  height: inherit;
   position: relative;
   float: left;
 }
-.item .item-image {
+.mySlide .item .item-image {
   position: relative;
 }
-.item .item-image img {
+.mySlide .item .item-image img {
   width: 100%;
   height: auto;
 }
-.item .item-image .item-menu {
+.mySlide .item .item-image .item-menu {
   background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5);
   height: 100%;
   left: 0;
@@ -69,28 +72,28 @@ span.color-gainsboro {
   opacity: 0;
   transition: .25s;
 }
-.item .item-image .item-menu ul {
+.mySlide .item .item-image .item-menu ul {
   background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9);
   list-style: outside none none;
   margin: 165px 0 0;
   padding: 0;
 }
-.item .item-image .item-menu ul li {
+.mySlide .item .item-image .item-menu ul li {
   padding: 2px 7px;
   border-right: 1px solid gainsboro;
   display: inline-block;
 }
-.item .item-image .item-menu ul li a {
+.mySlide .item .item-image .item-menu ul li a {
   color: black;
 }
-.item .item-image .item-menu ul li:first-child {
+.mySlide .item .item-image .item-menu ul li:first-child {
   padding-right: none;
   border-right: none;
 }
-.item .item-image .item-menu ul li:last-child {
+.mySlide .item .item-image .item-menu ul li:last-child {
   border-right: none;
 }
-.item .item-new {
+.mySlide .item .item-new {
   font-size: 11px;
   font-weight: bold;
   border: 1px solid #ff6766;
@@ -98,24 +101,50 @@ span.color-gainsboro {
   position: absolute;
   top: 15px;
 }
-.item .item-new p {
+.mySlide .item .item-new p {
   padding: 2px 10px;
   background-color: #ff6766;
   color: white;
 }
-.item .item-sub {
+.mySlide .item .item-sub {
   padding: 20px 10px;
 }
-.item .item-sub .br {
+.mySlide .item .item-sub .br {
   display: block;
 }
-.item .item-sub .color-gainsboro {
+.mySlide .item .item-sub .color-gainsboro {
   text-decoration: line-through;
 }
-
-.item:hover .item-menu {
+.mySlide .item:hover .item-menu {
   opacity: 1;
   transition: all 0.25s ease 0s;
+}
+
+.dots-section {
+  position: absolute;
+  left: 50%;
+  width: 60%;
+  padding-left: 0;
+  margin-left: -30%;
+  text-align: center;
+}
+.dots-section .dot {
+  background-color: #ddd;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+  height: 10px;
+  margin: 1px;
+  text-indent: -999px;
+  width: 10px;
+}
+.dots-section .active {
+  background-color: #FF6766;
+  border: 1px solid #FF6766;
+  height: 12px;
+  margin: 0;
+  width: 12px;
 }
 
 /*-----------HEADER LEVEL ONE------------*/
@@ -542,6 +571,9 @@ span.color-gainsboro {
 .trending-clothing .description .name {
   font-size: 26px;
 }
+.trending-clothing .content {
+  position: relative;
+}
 .trending-clothing .content .select {
   margin-bottom: 42px;
   text-align: center;
@@ -555,6 +587,15 @@ span.color-gainsboro {
 .trending-clothing .content .select a.active {
   color: black;
 }
+.trending-clothing .content .dots-section {
+  top: 540px;
+}
 .trending-clothing .mySlides {
   height: 430px;
+}
+.trending-clothing .mySlides .mySlide {
+  display: none;
+}
+.trending-clothing .mySlides .mySlide:first-child {
+  display: block;
 }
