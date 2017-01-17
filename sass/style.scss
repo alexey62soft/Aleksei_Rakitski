@@ -711,3 +711,47 @@ span.color-gainsboro {
         }
     }
 }
+
+/*-----------FEATURED PRODUCTS------------*/
+
+.featured-products {
+    padding: 95px 0;
+    
+    .description > span {
+        text-align: center;
+        font-weight: bold;
+        display: block;
+    }
+    
+    .description .name {
+        font-size: 26px;
+    }
+    
+    .content {
+        position: relative;
+    
+        .select {
+            margin-bottom: 42px;
+            text-align: center;
+            font-weight: bold;
+            display: block;
+            
+            a {
+                margin: 0px 5px;
+                font-weight: bold;
+            }
+            
+            a.active {
+                color: black;
+            }
+        }
+        
+        .dots-section {
+            top: 540px;
+        }
+    }
+    
+    .mySlides{
+        height: 860px;
+    }
+}
