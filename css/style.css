@@ -1058,6 +1058,79 @@ span.color-gainsboro {
   display: block;
 }
 
+/*-----------BRAND LOGOS------------*/
+.brand-logos {
+  padding: 10px 0;
+}
+
+.brand-logos .description {
+  margin-bottom: 60px;
+}
+
+.brand-logos .description h2 {
+  font-weight: bold;
+  color: #232323;
+  float: left;
+  font-size: 18px;
+  text-transform: uppercase;
+  width: 9%;
+}
+
+.brand-logos .description .dotted-line {
+  border-bottom: 1px dotted #232323;
+  border-top: 1px dotted #232323;
+  height: 3px;
+  float: left;
+  margin-top: 9px;
+  width: 86%;
+}
+
+.brand-logos .description .select {
+  display: block;
+  height: 18px;
+  text-align: center;
+  position: relative;
+}
+
+.brand-logos .description .select .prev-control, .brand-logos .description .select .next-control {
+  padding: 0 4px;
+  position: relative;
+  background-color: transparent;
+  color: #999;
+  width: 18px;
+  height: 18px;
+  top: 0;
+}
+
+.brand-logos .description .select .prev-control i, .brand-logos .description .select .next-control i {
+  font-weight: bold;
+}
+
+.brand-logos .description .select .prev-control:hover, .brand-logos .description .select .next-control:hover {
+  color: #232323;
+}
+
+.brand-logos .content {
+  position: relative;
+}
+
+.brand-logos .mySlides {
+  height: 120px;
+}
+
+.brand-logos .mySlides .mySlide {
+  margin: 0 10px;
+  height: inherit;
+  display: inline-block;
+  text-align: center;
+  width: 175px;
+  float: left;
+}
+
+.brand-logos .mySlides .mySlide:nth-child(7), .brand-logos .mySlides .mySlide:nth-child(8) {
+  display: none;
+}
+
 /*-----------COPYRIGHTS------------*/
 footer .copyrights {
   padding: 18px 0;

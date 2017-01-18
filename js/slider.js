@@ -6,6 +6,7 @@
 var firstSlideIndex = 1;
 var secondSlideIndex = 1;
 var thirdSlideIndex = 1;
+var fourthSlideIndex = 1;
 
 //for first slider
 function firstShowDivs(n) {
@@ -62,4 +63,21 @@ function thirdShowDivs(n) {
 
 function thirdCurrentDiv(n) {
     thirdShowDivs(thirdSlideIndex = n);
+}
+
+//for fourth slider
+function fourthShowDivs(n) {
+    var i, x = document.getElementsByClassName('mySlide fourthInScript');
+    if (n + 5 > x.length) {fourthSlideIndex = 1; }
+    if (n < 1) {fourthSlideIndex = 3; }
+    for (i = 0; i < x.length; i = i + 1) {
+        x[i].style.display = "none";
+    }
+    for (i = 0; i < 6; i = i + 1) {
+        x[fourthSlideIndex - 1 + i].style.display = "block";
+    }
+}
+
+function fourthPlusDiv(n) {
+    fourthShowDivs(fourthSlideIndex += n);
 }
