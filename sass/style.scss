@@ -1151,6 +1151,65 @@ span.color-gainsboro {
     }
 }
 
+/*-----------FOOTER TOP------------*/
+
+footer .footer-top {
+    padding: 18px 0;
+    height: 32px;
+    background: none repeat scroll 0 0 #2a2a2a;
+    
+    .newsletter-wrapper{
+        width: 50%;
+        float: left;
+        
+        a {
+            
+            i {
+                margin-right: 5px;
+            }
+        }
+
+        input[type="text"] {
+            background: none repeat scroll 0 0 #232323;
+            border: medium none;
+            color: #fff;
+            margin: 0 10px;
+            padding: 8px 15px;
+            width: 43%;
+        }
+        
+        input[type="submit"] {
+            background: none repeat scroll 0 0 #232323;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 7px 15px;
+            text-transform: uppercase;
+        }
+    }
+    
+    .credit-cards{
+        width: 50%;
+        float: left;
+        
+        a {
+            display: inline-block;
+            float: left;
+            margin: 0 5px;
+            
+            img {
+                width: auto;
+                height: 32px;
+            }
+        }
+    }
+}
+
+/*-----------SITE MAP------------*/
+
+footer .site-map {
+    background: none repeat scroll 0 0 #232323;
+}
+
 /*-----------COPYRIGHTS------------*/
 
 footer .copyrights {
