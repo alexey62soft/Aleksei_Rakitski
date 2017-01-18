@@ -5,6 +5,7 @@
 //fields
 var firstSlideIndex = 1;
 var secondSlideIndex = 1;
+var thirdSlideIndex = 1;
 
 //for first slider
 function firstShowDivs(n) {
@@ -40,4 +41,25 @@ function secondShowDivs(n) {
 
 function secondPlusDiv(n) {
     secondShowDivs(secondSlideIndex += n);
+}
+
+//for third slider
+function thirdShowDivs(n) {
+    var i,
+        x = document.getElementsByClassName('mySlide thirdInScript'),
+        dots = document.getElementsByClassName('dot thirdInScript');
+    if (n > x.length) {thirdSlideIndex = 1; }
+    if (n < 1) {thirdSlideIndex = x.length; }
+    for (i = 0; i < x.length; i = i + 1) {
+        x[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i = i + 1) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    x[thirdSlideIndex - 1].style.display = "block";
+    dots[thirdSlideIndex - 1].className += " active";
+}
+
+function thirdCurrentDiv(n) {
+    thirdShowDivs(thirdSlideIndex = n);
 }

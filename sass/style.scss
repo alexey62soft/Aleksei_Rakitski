@@ -986,3 +986,107 @@ span.color-gainsboro {
         }
     }
 }
+
+/*-----------TESTIMONIALS------------*/
+
+.testimonials {
+    padding: 95px 0;
+    
+    .description {
+        text-align: center;
+        
+        span {
+            font-weight: bold;
+            display: block;
+        }
+    }
+    
+    .description .name {
+        font-size: 26px;
+    }
+    
+    .content {
+        position: relative;
+    }
+    
+    .mySlides{
+        height: 140px;
+        
+        .mySlide {
+            font-weight: 500;
+            height: inherit;
+            display: none;
+            
+            p.description {
+                text-align: center;
+                text-transform: none;
+                color: #555555;
+                font-size: 17px;
+                font-style: italic;
+                margin: 0 auto 40px;
+                width: 64%;
+                
+                .fa{
+                    color: #ffffff;
+                }
+                
+                .fa-quote-left {
+                    margin-right: 15px;
+                }
+                
+                .fa-quote-right {
+                    margin-left: 15px;
+                }
+            }
+            
+            .author-box {
+                margin: 0 auto;
+                overflow: hidden;
+                width: 22%;
+                
+                img {
+                    float: left;
+                    margin-right: 15px;
+                    width: 15%;
+                }
+                
+                .author-text {
+                    float: left;
+                    text-align: left;
+                    width: 79%;
+                    
+                    h4 {
+                        font-weight: bold;
+                        color: #232323;
+                        font-size: 16px;
+                        margin-bottom: 6px;
+                    }
+                    
+                    p {
+                        color: #777777;
+                        font-size: 12px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+        
+        .mySlide:first-child {
+            display: block;
+        }
+    }
+}
+
+
+/*-----------COPYRIGHTS------------*/
+
+footer .copyrights {
+    padding: 18px 0;
+    background: none repeat scroll 0 0 #181818;
+    
+    .wrapper {
+        font-size: 12px;
+        text-align: center;
+        color: white;
+    }
+}

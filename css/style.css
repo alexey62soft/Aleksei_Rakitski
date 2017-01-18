@@ -968,3 +968,104 @@ span.color-gainsboro {
 .blog .mySlides .mySlide:first-child {
   display: block;
 }
+
+/*-----------TESTIMONIALS------------*/
+.testimonials {
+  padding: 95px 0;
+}
+
+.testimonials .description {
+  text-align: center;
+}
+
+.testimonials .description span {
+  font-weight: bold;
+  display: block;
+}
+
+.testimonials .description .name {
+  font-size: 26px;
+}
+
+.testimonials .content {
+  position: relative;
+}
+
+.testimonials .mySlides {
+  height: 140px;
+}
+
+.testimonials .mySlides .mySlide {
+  font-weight: 500;
+  height: inherit;
+  display: none;
+}
+
+.testimonials .mySlides .mySlide p.description {
+  text-align: center;
+  text-transform: none;
+  color: #555555;
+  font-size: 17px;
+  font-style: italic;
+  margin: 0 auto 40px;
+  width: 64%;
+}
+
+.testimonials .mySlides .mySlide p.description .fa {
+  color: #ffffff;
+}
+
+.testimonials .mySlides .mySlide p.description .fa-quote-left {
+  margin-right: 15px;
+}
+
+.testimonials .mySlides .mySlide p.description .fa-quote-right {
+  margin-left: 15px;
+}
+
+.testimonials .mySlides .mySlide .author-box {
+  margin: 0 auto;
+  overflow: hidden;
+  width: 22%;
+}
+
+.testimonials .mySlides .mySlide .author-box img {
+  float: left;
+  margin-right: 15px;
+  width: 15%;
+}
+
+.testimonials .mySlides .mySlide .author-box .author-text {
+  float: left;
+  text-align: left;
+  width: 79%;
+}
+
+.testimonials .mySlides .mySlide .author-box .author-text h4 {
+  font-weight: bold;
+  color: #232323;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.testimonials .mySlides .mySlide .author-box .author-text p {
+  color: #777777;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.testimonials .mySlides .mySlide:first-child {
+  display: block;
+}
+
+/*-----------COPYRIGHTS------------*/
+footer .copyrights {
+  padding: 18px 0;
+  background: none repeat scroll 0 0 #181818;
+}
+
+footer .copyrights .wrapper {
+  font-size: 12px;
+  text-align: center;
+  color: white;
+}
