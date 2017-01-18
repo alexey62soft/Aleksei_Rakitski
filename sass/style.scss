@@ -43,6 +43,28 @@ span.color-gainsboro {
     width: 40px;
 }
 
+.button {
+    background-color: transparent;
+    border: 3px solid #ff6766;
+    padding: 10px 15px;
+    text-align: center;
+    height: 20px;
+    float: left;
+    
+    a {
+        font-weight: bolder;
+        color: black;
+    }
+}
+
+.button:hover {
+    background-color: #f06160;
+    
+    a {
+        color: white;
+    }
+}
+
 .mySlide{
     height: 430px;
   
@@ -138,29 +160,29 @@ span.color-gainsboro {
 .dots-section {
     position: absolute;
     left: 50%;
-    width: 60%;
-    padding-left: 0;
-    margin-left: -30%;
+    width: 50%;
+    padding-left: 7px;
+    margin-left: -26%;
     text-align: center;
     
     .dot {
         background-color: #ddd;
         border: 1px solid #ddd;
-        border-radius: 10px;
+        border-radius: 6px;
         cursor: pointer;
         display: inline-block;
-        height: 10px;
+        width: 6px;
+        height: 6px;
         margin: 1px;
         text-indent: -999px;
-        width: 10px;
     }
     
     .active {
         background-color: #FF6766;
         border: 1px solid #FF6766;
-        height: 12px;
+        height: 8px;
         margin: 0;
-        width: 12px;
+        width: 8px;
     }
 }
 
@@ -561,20 +583,6 @@ span.color-gainsboro {
             }
         }
         
-        .button {
-            background-color: transparent;
-            border: 3px solid #ff6766;
-            padding: 10px 15px;
-            text-align: center;
-            height: 20px;
-            float: left;
-            
-            a {
-                font-weight: bolder;
-                color: black;
-            }
-        }
-        
         .offer-tag {
             background: url("../images/banner/circle.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
             width: 103px;
@@ -685,6 +693,7 @@ span.color-gainsboro {
             display: block;
             
             a {
+                color: #999999;
                 margin: 0px 5px;
                 font-weight: bold;
             }
@@ -709,6 +718,71 @@ span.color-gainsboro {
         .mySlide:first-child {
             display: block;
         }
+    }
+}
+
+/*-----------PROMOTION------------*/
+
+.promotion {
+    height: 320px;
+    
+    .collumn {
+        background-color: #f2f4f5;
+        width: 50%;
+        float: left;
+        
+        .side-left {
+            margin-left: 50px;
+            float: left;
+            
+            .button {
+                margin: 0 35%;
+            }
+        }
+        
+        .side-right {
+            margin-right: 50px;
+            float: right;
+            
+            .button {
+                margin: 0 29%;
+            }
+        }
+        
+        .side-left, .side-right {
+            margin-top: 60px;
+            margin-bottom: 60px;
+            height: 200px;
+            text-align: center;
+            display: inline-block;
+            width: 60%;
+            
+            span {
+                font-weight: bold;
+                display: block;
+            }
+            
+            span.color-pink {
+                display: inline-block;
+            }
+            
+            span.with-border {
+                display: inline-block;
+                border-top: 2px solid #d1d1d1;
+                border-bottom: 2px solid #d1d1d1;
+                padding: 0 4px;
+                margin: 30px 0;
+                position: static;
+            }
+            
+            .big-font {
+                font-size: 32px;
+            }
+        }
+    }
+    
+    .collumn:hover {
+        background-color: #eef1f2;
     }
 }
 
@@ -737,6 +811,7 @@ span.color-gainsboro {
             display: block;
             
             a {
+                color: #999999;
                 margin: 0px 5px;
                 font-weight: bold;
             }
@@ -753,5 +828,161 @@ span.color-gainsboro {
     
     .mySlides{
         height: 860px;
+    }
+}
+
+/*-----------BLOG------------*/
+
+.blog {
+    background-color: #f2f4f5;
+    padding: 95px 0;
+    
+    .description > span {
+        text-align: center;
+        font-weight: bold;
+        display: block;
+    }
+    
+    .description .name {
+        font-size: 26px;
+    }
+    
+    .content {
+        position: relative;
+    
+        .select {
+            display: block;
+            height: 30px;
+            margin-bottom: 42px;
+            text-align: center;
+            position: relative;
+            
+            .prev-control, .next-control {
+                position: absolute;
+                background: none repeat scroll 0 0 #e4e5e5;
+                width: 30px;
+                height: 30px;
+                top: 0;
+                
+                i {
+                    padding: 5px 5px;
+                    color: white;
+                }
+            }
+            
+            .prev-control:hover, .next-control:hover {
+                background: none repeat scroll 0 0 #ff6766;
+            }
+            
+            .prev-control {
+                left: 47%;
+            }
+            
+            .next-control {
+                right: 47%;
+            }
+        }   
+    }
+    
+    .mySlides{
+        height: 265px;
+        
+        .mySlide {
+            height: inherit;
+            display: none;
+            
+            .collumn {
+                width: 50%;
+                height: inherit;
+                display: inline-block;
+                float: left;
+                
+                .item-text {
+                    width: 47%;
+                    padding-right: 20px;
+                    display: inline-block;
+                    float: left;
+                    
+                    h2 {
+                        font-size: 45px;
+                        text-align: left;
+                        font-weight: 300;
+                        color: #ff6766;
+                        display: block;
+                        
+                        span {
+                            color: black;
+                            font-size: 31px;
+                            font-weight: 300;
+                        }
+                    }
+                    
+                    .months {
+                        
+                        .right {
+                            font-weight: bold;
+                            font-size: 12px;
+                            height: 12px;
+                            padding-bottom: 20px;
+                            margin-bottom: 20px;
+                            border-bottom: 1px solid #d1d1d1;
+                            
+                            p {
+                                width: 50%;
+                                display: inline;
+                                float: left;
+                            }
+                            
+                            span {
+                                text-align: right;
+                                width: 50%;
+                                display: inline;
+                                float: left;
+                                
+                                i {
+                                    padding: 0 5px;
+                                    color: #ff6766;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                        
+                        .item-bottom-text {
+                            font-size: 13px;
+                            
+                            h4 {
+                                font-weight: 600;
+                            }
+                            
+                            p {
+                                color: #999999;
+                                display: block;
+                                margin-top: 8px;
+                                margin-bottom: 20px;
+                                text-transform: none;
+                            }
+                        }
+                    }
+                }
+                
+                .item-img {
+                    width: 47%;
+                    display: inline-block;
+                    float: right;
+                    
+                    img {
+                        height: auto; 
+                        width: auto; 
+                        max-width: 252px; 
+                        max-height: 246px;
+                        float: left;
+                    }
+                }
+            }
+        }
+        
+        .mySlide:first-child {
+            display: block;
+        }
     }
 }
