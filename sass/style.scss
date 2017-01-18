@@ -1163,6 +1163,7 @@ footer .footer-top {
         float: left;
         
         a {
+            font-weight: 500;
             
             i {
                 margin-right: 5px;
@@ -1182,6 +1183,7 @@ footer .footer-top {
             background: none repeat scroll 0 0 #232323;
             border: 1px solid #fff;
             color: #fff;
+            font-weight: 500;
             padding: 7px 15px;
             text-transform: uppercase;
         }
@@ -1208,6 +1210,78 @@ footer .footer-top {
 
 footer .site-map {
     background: none repeat scroll 0 0 #232323;
+    
+    .wrapper {
+        height: 270px;
+        padding: 70px 0;
+        
+        .collumn {
+            padding: 0 15px;
+            width: 22%;
+            float: left;
+            
+            h5 {
+                font-weight: bold;
+                color: #cecece;
+                font-size: 15px;
+            }
+            
+            .colorline {
+                border-top: 1px solid #1a1a1a;
+                margin-bottom: 30px;
+                margin-top: 18px;
+                position: relative;
+            }
+            
+            .colorline:after {
+                border-top: 1px solid #b65050;
+                content: "";
+                left: 0;
+                position: absolute;
+                top: -1px;
+                width: 52px;
+            }
+            
+            ul.navigation {
+                
+                li {
+                    
+                    a {
+                        color: #aaaaaa;
+                        display: block;
+                        font-weight: 500;
+                        padding: 7px 0;
+                        text-transform: none;
+                    }
+                }
+            }
+            
+            address {
+                color: #aaaaaa;
+                line-height: 35px;
+                font-weight: 500;
+                text-transform: none;
+            }
+            
+            ul.social-links {
+                
+                li {
+                    display: inline;
+                    margin-right: 5px;
+                    
+                    a {
+                        background: none repeat scroll 0 0 #373737;
+                        color: #aaaaaa;
+                        font-size: 14px;
+                        display: inline-block;
+                        height: 25px;
+                        width: 25px;
+                        padding: 12px 0 0 13px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 /*-----------COPYRIGHTS------------*/
