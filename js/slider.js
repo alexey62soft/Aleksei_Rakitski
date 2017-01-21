@@ -11,7 +11,7 @@ var fourthSlideIndex = 1;
 //for first slider
 function firstShowDivs(n) {
     var i,
-        x = document.getElementsByClassName('mySlide firstInScript'),
+        x = document.getElementsByClassName('my-slide firstInScript'),
         dots = document.getElementsByClassName('dot firstInScript');
     if (n > x.length) {firstSlideIndex = 1; }
     if (n < 1) {firstSlideIndex = x.length; }
@@ -31,7 +31,7 @@ function firstCurrentDiv(n) {
 
 //for second slider
 function secondShowDivs(n) {
-    var i, x = document.getElementsByClassName('mySlide secondInScript');
+    var i, x = document.getElementsByClassName('my-slide secondInScript');
     if (n > x.length) {secondSlideIndex = 1; }
     if (n < 1) {secondSlideIndex = x.length; }
     for (i = 0; i < x.length; i = i + 1) {
@@ -47,7 +47,7 @@ function secondPlusDiv(n) {
 //for third slider
 function thirdShowDivs(n) {
     var i,
-        x = document.getElementsByClassName('mySlide thirdInScript'),
+        x = document.getElementsByClassName('my-slide thirdInScript'),
         dots = document.getElementsByClassName('dot thirdInScript');
     if (n > x.length) {thirdSlideIndex = 1; }
     if (n < 1) {thirdSlideIndex = x.length; }
@@ -67,7 +67,7 @@ function thirdCurrentDiv(n) {
 
 //for fourth slider
 function fourthShowDivs(n) {
-    var i, x = document.getElementsByClassName('mySlide fourthInScript');
+    var i, x = document.getElementsByClassName('my-slide fourthInScript');
     if (n + 5 > x.length) {fourthSlideIndex = 1; }
     if (n < 1) {fourthSlideIndex = 3; }
     for (i = 0; i < x.length; i = i + 1) {
