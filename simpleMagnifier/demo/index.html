@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <title>jQuery Simple Magnifier Demo</title>
+        <link rel="stylesheet" type="text/css" media="all" href="style.css">
+        <!--Need JQuery library-->
+        <script
+  src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="../dist/simple-magnifier-es6-0.1.min.js"></script>
+    </head>
+    <body>
+        <div class="magnify1"></div>
+        <div class="magnify2"></div>
+        <div class="magnify3"></div>
+    </body>
+    <script type="text/javascript">
+        $('.magnify1').simpleMagnifier({
+            magnifierWidth: 200,
+            duration: 150,
+            magnifierColor: '#008b8b',
+            url: 'images/test1.jpg'
+        });
+        $('.magnify2').simpleMagnifier({
+            duration: 50,
+            url: 'images/test2.jpg'
+        });
+        $('.magnify3').simpleMagnifier({
+            magnifierWidth: 200,
+            duration: 150,
+            url: 'images/test3.jpg'
+        });
+    </script>
+</html>

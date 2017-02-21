@@ -1,0 +1,14 @@
+body {
+    background: #e4e4e4 url('images/binding_light.png');
+    font-size: 62.5%;
+    line-height: 1;
+    padding-bottom: 65px;
+    padding-top: 35px;
+}
+.magnify2 {
+    width: 600px;
+}
+
+.magnify3 {
+    width: 700px;
+}
