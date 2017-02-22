@@ -8,7 +8,8 @@
                 "includePaths": [],
                 "sourceComments": true,
                 "outputStyle": "nested"
-            }
+            },
+            "linting.collapsed": true
         }
     }
 }
