@@ -7,6 +7,10 @@ import concat from 'gulp-concat';
 import rename from 'gulp-rename';
 import uglify from 'gulp-uglify';
 import browserSync from 'browser-sync';
+import imagemin from 'gulp-imagemin';
+import pngquant from 'imagemin-pngquant';
+import cache from 'gulp-cache';
+import del from 'del';
 
 const sassPaths = {
     src: './src/scss/**/*.scss',
@@ -18,15 +22,19 @@ const jsPaths = {
     dest: './dist/scripts/'
 }
 
+const imgPaths = {
+    src: './src/img/**/*',
+    dest: './dist/images/'
+}
+
 gulp.task('styles', () => {
     return gulp.src(sassPaths.src)
         .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
+            browsers: ['last 15 versions', '> 1%', 'ie 8', 'ie 7'],
             cascade: false
         }))
         .pipe(gulp.dest(sassPaths.dest))
-        .pipe(sass.sync().on('error', plugins.sass.logError))
-        .pipe(gulp.dest(sassPaths.dest));
+        .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('scripts', () => {
@@ -38,7 +46,7 @@ gulp.task('scripts', () => {
         .pipe(gulp.dest(jsPaths.dest));
 });
 
-gulp.task('browser-sync', function () {
+gulp.task('browser-sync', () => {
    var files = [
       './**/*.html',
       jsPaths.src,
@@ -47,14 +55,41 @@ gulp.task('browser-sync', function () {
 
    browserSync.init(files, {
       server: {
-         baseDir: './'
+         baseDir: './dist/'
       }
    });
 });
 
-gulp.task('default', ['styles', 'scripts', 'watch']);
+gulp.task('img', () => {
+    return gulp.src(imgPaths.src)
+        .pipe(cache(imagemin({
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{ removeViewBox: false }],
+            use: [pngquant()]
+        })))
+        .pipe(gulp.dest(imgPaths.dest));
+});
+
+gulp.task('default', ['browser-sync', 'styles', 'scripts', 'img', 'watch'], () => {
+    var buildAssets = gulp.src('./assets/**/*')
+        .pipe(gulp.dest('./dist/assets/'));
+
+    var buildHtml = gulp.src('./src/*.html')
+        .pipe(gulp.dest('./dist/'));
+});
+
+
+gulp.task('clean-dist', () => {
+    return del.sync('./dist/');
+});
+
+gulp.task('clear-cache', () => {
+    return cache.clearAll();
+});
 
 gulp.task('watch', () => {
     gulp.watch(sassPaths.src, ['styles']);
-    gulp.watch(jsPaths.src, ['scripts']);
+    gulp.watch('./src/*.html', browserSync.reload);
+    gulp.watch(jsPaths.src, ['scripts'], browserSync.reload);
 });
