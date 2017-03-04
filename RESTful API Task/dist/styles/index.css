@@ -1,0 +1,152 @@
+@font-face {
+  font-family: Balance;
+  src: url("../assets/BalanceBold.otf"); }
+
+@font-face {
+  font-family: Garamond Premier Pro;
+  src: url("../assets/GaramondPremierProSemiboldItalic.ttf") format("truetype");
+  font-style: italic; }
+
+@font-face {
+  font-family: Transport;
+  src: url("../assets/TransportMedium.ttf") format("truetype"); }
+
+@font-face {
+  font-family: Minion Pro;
+  src: url("../assets/MinionProRegular.ttf") format("truetype"); }
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  *:before, *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+
+a {
+  display: inline-block;
+  text-decoration: none; }
+
+.event-item {
+  border-bottom: 1px solid lightgrey;
+  font-family: Transport;
+  margin: 0 50px;
+  padding: 69px 0; }
+  .event-item .col-md-1 {
+    width: 11%; }
+    .event-item .col-md-1 span {
+      display: block;
+      text-transform: uppercase; }
+    .event-item .col-md-1 .month {
+      font-size: 30px;
+      margin-bottom: 25px;
+      position: relative; }
+    .event-item .col-md-1 .under {
+      font-family: Balance;
+      font-size: 38px;
+      left: 0px;
+      position: absolute;
+      top: 5px; }
+    .event-item .col-md-1 .day {
+      font-size: 70px;
+      font-weight: bold; }
+  .event-item .img {
+    width: 44%; }
+    .event-item .img img {
+      width: 100%; }
+  .event-item .text {
+    padding-left: 80px; }
+    .event-item .text h4 {
+      font-size: 34px;
+      margin-bottom: 10px; }
+    .event-item .text h5 {
+      font-size: 22px;
+      margin-bottom: 6px; }
+    .event-item .text .descriptionitem {
+      border-bottom: 1px solid lightgrey;
+      display: block;
+      font-family: Minion Pro;
+      font-size: 22px;
+      height: 145px;
+      margin: 28px 0; }
+    .event-item .text .button {
+      font-size: 23px; }
+
+.event-item > div {
+  padding: 0 0; }
+
+.header-container {
+  background: url("../images/header-image.jpg") no-repeat;
+  background-size: 100% auto;
+  color: white; }
+  .header-container .header-menu {
+    font-family: Balance;
+    font-size: 18px;
+    text-transform: uppercase; }
+    .header-container .header-menu a {
+      color: white; }
+    .header-container .header-menu .logo {
+      font-size: 33px;
+      padding: 38px 25px;
+      text-align: right; }
+      .header-container .header-menu .logo a {
+        text-decoration: underline; }
+    .header-container .header-menu ul.menu {
+      padding: 48px 0;
+      padding-left: 47px; }
+      .header-container .header-menu ul.menu li {
+        display: inline;
+        margin-right: 38px; }
+      .header-container .header-menu ul.menu .social-link {
+        margin-right: 20px; }
+  .header-container .header-banner {
+    padding-top: 85px;
+    padding-bottom: 108px;
+    position: relative;
+    text-align: center; }
+    .header-container .header-banner span.banner-name {
+      display: inline-block;
+      font-family: Transport;
+      font-size: 76px;
+      letter-spacing: 30px;
+      margin-bottom: 20px;
+      text-transform: uppercase; }
+    .header-container .header-banner p.description {
+      font-family: Garamond Premier Pro;
+      font-size: 24px;
+      line-height: 35px;
+      text-transform: none;
+      margin-bottom: 32px; }
+    .header-container .header-banner .dots-section {
+      left: 50%;
+      margin-left: -2%;
+      padding-left: 8px;
+      position: absolute;
+      text-align: center;
+      width: 4%; }
+      .header-container .header-banner .dots-section .dot {
+        background-color: white;
+        border: 1px solid white;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: inline-block;
+        height: 6px;
+        margin: 0 4px;
+        opacity: 0.5;
+        text-indent: -999px;
+        width: 6px; }
+      .header-container .header-banner .dots-section .active {
+        opacity: 1; }
+
+.events .header-events {
+  border-bottom: 1px solid lightgrey;
+  margin: 0 50px;
+  padding: 69px 0;
+  font-family: Transport;
+  font-size: 28px; }
+  .events .header-events .col-md-3 {
+    padding: 0 0; }
+  .events .header-events .site-part-name {
+    display: inline-block; }

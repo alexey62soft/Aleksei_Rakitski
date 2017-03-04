@@ -3,9 +3,15 @@
 import gulp from 'gulp';
 import sass from 'gulp-sass';
 import autoprefixer from 'gulp-autoprefixer';
-import concat from 'gulp-concat';
+
+import es6Promise from 'es6-promise';
+import babelify from 'babelify';
+import browserify from 'browserify';
+import connect from 'gulp-connect';
+import source from 'vinyl-source-stream';
 import rename from 'gulp-rename';
 import uglify from 'gulp-uglify';
+
 import browserSync from 'browser-sync';
 import imagemin from 'gulp-imagemin';
 import pngquant from 'imagemin-pngquant';
@@ -29,6 +35,7 @@ const imgPaths = {
 
 gulp.task('styles', () => {
     return gulp.src(sassPaths.src)
+        .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['last 15 versions', '> 1%', 'ie 8', 'ie 7'],
             cascade: false
@@ -38,16 +45,17 @@ gulp.task('styles', () => {
 });
 
 gulp.task('scripts', () => {
-    return gulp.src(jsPaths.src)
-        .pipe(concat('index.js'))
-        .pipe(gulp.dest(jsPaths.dest))
-        .pipe(rename('index.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest(jsPaths.dest));
+    return browserify({
+        entries: ['./src/js/loader.es6.js']
+    })
+    .transform(babelify)
+    .bundle()
+    .pipe(source("loader.js"))
+    .pipe(gulp.dest(jsPaths.dest));
 });
 
 gulp.task('browser-sync', () => {
-   var files = [
+   let files = [
       './**/*.html',
       jsPaths.src,
       sassPaths.src
@@ -71,12 +79,21 @@ gulp.task('img', () => {
         .pipe(gulp.dest(imgPaths.dest));
 });
 
-gulp.task('default', ['browser-sync', 'styles', 'scripts', 'img', 'watch'], () => {
-    var buildAssets = gulp.src('./assets/**/*')
-        .pipe(gulp.dest('./dist/assets/'));
-
-    var buildHtml = gulp.src('./src/*.html')
+gulp.task('http', () => {
+    return gulp.src('./src/*.html')
         .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('lib', () => {
+    return gulp.src('./src/lib/**/*')
+        .pipe(gulp.dest('./dist/lib/'));
+});
+
+gulp.task('default', ['browser-sync', 'styles', 'scripts', 'img', 'http', 'lib', 'watch'], () => {
+    let buildAssets = gulp.src('./assets/**/*')
+        .pipe(gulp.dest('./dist/assets/'));
+		
+	es6Promise.polyfill();
 });
 
 
@@ -90,6 +107,7 @@ gulp.task('clear-cache', () => {
 
 gulp.task('watch', () => {
     gulp.watch(sassPaths.src, ['styles']);
-    gulp.watch('./src/*.html', browserSync.reload);
+    gulp.watch('./src/*.html', ['http'], browserSync.reload);
+    gulp.watch('./src/lib/**/*', ['lib'], browserSync.reload);
     gulp.watch(jsPaths.src, ['scripts'], browserSync.reload);
 });

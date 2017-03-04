@@ -3,35 +3,59 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/reset.css">
-        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-        <script type="text/javascript" src="js/slider.js"></script>
+        <link rel="stylesheet" type="text/css" href="lib/reset.css">
+        <link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles/index.css">
+        <link rel="stylesheet" type="text/css" href="lib/font-awesome.css">
+        <script type="text/javascript" src="/scripts/loader.js"></script>
         <title>NIMIS Site</title>
     </head>
     <body>
-        <!--Begin HEADER LEVEL ONE-->
-        <div class="header-level-one">
-            <div class="wrapper">
-                <div class="part-section">
-                    <img class="delivery-icon" src="images/header-level-one/delivery.png" alt="Delivery icon">
-                    <p>Get free! Shipping on order over</p>
+        <div class='header-container'>
+            <div class="header-menu row">
+                <div class="col-md-1 logo"><a href="#">R</a></div>
+                <div class="col-md-7 col-md-offset-4">
+                    <ul class="menu">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Connect</a></li>
+                        <li><a href="#">Resources</a></li>
+                        <li><a href="#">Give</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li class="social-link"><a class="fa fa-twitter" href=""></a></li>
+                        <li class="social-link"><a class="fa fa-facebook" href=""></a></li>
+                        <li class="social-link"><a class="fa fa-instagram" href=""></a></li>
+                    </ul>
                 </div>
-                <div class="part-section">
-                    <div class="float-right">
-                        <p><a href="">Login</a> / <a href="">Register</a></p>
-				        <ul class="language-list">
-                                <li><a href="">USD</a></li>
-							</ul>
-				        <img  src="images/header-level-one/flag.png" alt="Flag icon" />
+                <div class="clearfix"></div>
+            </div>
+            <div class="header-banner row">
+                <div class="col-md-6 col-md-offset-3">
+                    <span class="banner-name">Events</span>
+                    <p class="description">
+                        Risen seeks to actively engage our community with fellowship and love.
+                        Bellow you will find a list of upcoming events that you can
+                        attend, volunteer and share with others.
+                    </p>
+                    <div class="dots-section">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
                     </div>
                 </div>
             </div>
+            <div class="clearfix"></div>
         </div>
-        <!--End HEADER LEVEL ONE-->
-        <!--Begin FOOTER-->
-        <footer>
-        </footer>
-        <!--End FOOTER-->
+        <div class="events">
+            <div class="header-events row">
+                <div class="col-md-3">
+                    <span class="site-part-name">Upcoming Events</span>
+                </div>
+                <div class="col-md-3 col-md-offset-6"></div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="events-container">
+            </div>
+        </div>
+        <div class="any-event"></div>
     </body>
 </html>
