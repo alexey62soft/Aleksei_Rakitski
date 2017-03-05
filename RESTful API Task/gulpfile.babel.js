@@ -24,7 +24,7 @@ const sassPaths = {
 }
 
 const jsPaths = {
-    src: './src/js/**/*.js',
+    src: './src/**/*.js',
     dest: './dist/scripts/'
 }
 
@@ -79,7 +79,7 @@ gulp.task('img', () => {
         .pipe(gulp.dest(imgPaths.dest));
 });
 
-gulp.task('http', () => {
+gulp.task('html', () => {
     return gulp.src('./src/*.html')
         .pipe(gulp.dest('./dist/'));
 });
@@ -89,7 +89,22 @@ gulp.task('lib', () => {
         .pipe(gulp.dest('./dist/lib/'));
 });
 
-gulp.task('default', ['browser-sync', 'styles', 'scripts', 'img', 'http', 'lib', 'watch'], () => {
+gulp.task('components-scripts', () => {
+    return browserify({
+        entries: ['./src/components/js/event-component.es6.js']
+    })
+    .transform(babelify)
+    .bundle()
+    .pipe(source("event-component.js"))
+    .pipe(gulp.dest(jsPaths.dest));
+});
+
+gulp.task('components-html', () => {
+    return gulp.src('./src/components/*.html')
+        .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('default', ['browser-sync', 'styles', 'scripts', 'img', 'html', 'lib', 'components-scripts', 'components-html', 'watch'], () => {
     let buildAssets = gulp.src('./assets/**/*')
         .pipe(gulp.dest('./dist/assets/'));
 		
@@ -107,7 +122,8 @@ gulp.task('clear-cache', () => {
 
 gulp.task('watch', () => {
     gulp.watch(sassPaths.src, ['styles']);
-    gulp.watch('./src/*.html', ['http'], browserSync.reload);
+    gulp.watch('./src/*.html', ['html'], browserSync.reload);
+    gulp.watch('./src/components/*.html', ['components-html'], browserSync.reload);
     gulp.watch('./src/lib/**/*', ['lib'], browserSync.reload);
-    gulp.watch(jsPaths.src, ['scripts'], browserSync.reload);
+    gulp.watch(jsPaths.src, ['scripts', 'components-scripts'], browserSync.reload);
 });

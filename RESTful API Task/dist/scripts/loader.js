@@ -22,14 +22,14 @@ var anyEventContainer = 'any-event';
 
 function createElementForAll(elem, index) {
     document.getElementsByClassName(anyEventContainer)[0].style.display = 'none';
-    var htmlText = '<div class="event-item row">' + '<div class="col-md-1">' + '<span class="month">' + new Date(elem.publishedAt).getMonth() + '<span class="under">_</span></span>' + '<span class="day">' + new Date(elem.publishedAt).getDay() + '</span></div>' + '<div class="col-md-5 img"><img src=' + elem.urlToImage + '></div>' + '<div class="col-md-5 text">' + '<h4>' + elem.title.substring(0, 19) + '...' + '</h4><h5>' + elem.author + '</h5><h5>Descrition</h5><p class="descriptionitem">' + elem.description.substring(0, 117) + '...' + '</p><div id=' + index + ' class="button">View Event Details</div></div></div>';
+    var htmlText = '<event-general><div class="row">' + '<div class="col-first">' + '<span class="month">' + new Date(elem.publishedAt).getMonth() + '<span class="under">_</span></span>' + '<span class="day">' + new Date(elem.publishedAt).getDay() + '</span></div>' + '<div class="col-second"><img src=' + elem.urlToImage + '></div>' + '<div class="col-third">' + '<h4>' + elem.title.substring(0, 19) + '...' + '</h4><h5>' + elem.author + '</h5><h5>Descrition</h5><p class="descriptionitem">' + elem.description.substring(0, 117) + '...' + '</p><div id=' + index + ' class="button">View Event Details</div></div></div></event-general>';
     var htmlCont = document.getElementsByClassName(allEventsContainer)[0];
     htmlCont.insertAdjacentHTML('beforeEnd', htmlText);
     htmlCont.style.display = 'block';
 }
 
 function createElementForAny(elem) {
-    document.getElementById('testAll').style.display = 'none';
+    document.getElementsByClassName('.events')[0].style.display = 'none';
     var text = '<div><ul><li>Title: ' + elem.title + '</li><li>Author: ' + elem.author + '</li><li>Published at: ' + elem.publishedAt + '</li><li>Description: ' + elem.description + '</li><li>Url: ' + elem.url + '<li><img style="width: 200px" src=' + elem.urlToImage + '></li></ul></div>';
     var htmlcont = document.getElementById('testAny');
     htmlcont.innerHTML = "";
@@ -52,8 +52,9 @@ var formatter = _interopRequireWildcard(_formatter);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var ApiKey = 'fcd23384830044aaae4949fb0f7f2341';
+var ApiKey = '22c7d2614bec413494f1ba7b26b43c89';
 var source = 'bbc-news';
+var sortBy = 'latest';
 
 function getAllNews() {
     var _this = this;
@@ -67,17 +68,17 @@ function getAllNews() {
             index++;
         }, _this);
     }).catch(function (ex) {
-        return console.log('parsing failed', ex);
+        return console.log('Parsing failed', ex);
     });
 }
 
 function getAnyNews(num) {
-    fetch('https://newsapi.org/v1/articles?source=abc-news-au&apiKey=' + ApiKey).then(function (response) {
+    fetch('https://newsapi.org/v1/articles?source=' + source + '&sortBy=' + sortBy + '&apiKey=' + ApiKey).then(function (response) {
         return response.json();
     }).then(function (data) {
         return num < data.articles.length ? formatter.createElementForAny(data.articles[num]) : '';
     }).catch(function (ex) {
-        return console.log('parsing failed', ex);
+        return console.log('Parsing failed', ex);
     });
 }
 
