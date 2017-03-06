@@ -257,7 +257,83 @@ a {
 }
 
 .any-event {
-    display: none;
+    border: 1px solid black;
+    display: block;
+    padding: 75px 0;
+
+    .name {
+        position: relative;
+
+        .line {
+            border-bottom: 1px solid grey;
+            content: '';
+            display: block;
+            height: 1px;
+            position: absolute;
+            top: 13px;
+        }
+    }
+
+    .details {
+        color: grey;
+        font-size: 21px;
+        font-style: italic;
+        padding: 0 70px;
+
+        .name {
+             padding-bottom: 50px;
+
+            .line {
+                left: 84px;
+                width: 77%;
+            }
+        }
+
+        .info {
+            line-height: 35px;
+            padding-right: 54px;
+        }
+    }
+
+    .other {
+        color: grey;
+        font-size: 21px;
+        font-style: italic;
+        padding-left: 22px;
+        
+        .name {
+             padding-bottom: 50px;
+        }
+
+        .info {
+            line-height: 35px;
+            padding-right: 54px;
+        }
+
+        .name-title {
+
+            .line {
+                left: 62px;
+                width: 81%;
+            }
+        }
+
+        .name-author {
+
+            .line {
+                left: 84px;
+                width: 77%;
+            }
+        }
+
+        .name-date {
+
+            .line {
+                left: 67px;
+                width: 80%;
+            }
+        }
+    }
 }
 
 .footer-container {

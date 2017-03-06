@@ -13,3 +13,5 @@ document.addEventListener("DOMContentLoaded", () => {
     newsapi.changeSource(0);
 });
 
+//newsapi.getAnyNews(1);
+
