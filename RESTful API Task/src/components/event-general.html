@@ -15,41 +15,41 @@
             src: url('../assets/MinionProRegular.ttf') format('truetype');
         }
 
-        ::content * {
+        * {
             padding: 0;
             margin: 0;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
         }
 
-        ::content *:before, ::content *:after {
+        *:before, *:after {
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
         }
 
-        ::content a {
+        a {
             color: black;
             display: inline-block;
             text-decoration: none;
         }
 
-        ::content .row{
+        .row{
             border-bottom: 1px solid lightgrey;
             font-family: Transport;
             margin: 0 50px;
             padding: 69px 0;
         }
 
-        ::content .row:before, ::content .row:after {
+        .row:before, .row:after {
             content: " ";
             display: table;
         }
 
-        ::content .row:after {
+        .row:after {
             clear: both;
         }
 
-        ::content .col-first {
+        .col-first {
             float: left;
             margin: 0;
             min-height: 1px;
@@ -57,18 +57,18 @@
             width: 11%;
         }
 
-        ::content .col-first span {
+        .col-first span {
             display: block;
             text-transform: uppercase;
         }
 
-        ::content .col-first .month {
+        .col-first .month {
             font-size: 30px;
             margin-bottom: 25px;
             position: relative;
         }
 
-        ::content .col-first .under {
+        .col-first .under {
             font-family: Balance;
             font-size: 38px;
             left: 0px;
@@ -76,12 +76,12 @@
             top: 5px;
         }
 
-        ::content .col-first .day {
+        .col-first .day {
             font-size: 70px;
             font-weight: bold;
         }
 
-        ::content .col-second {
+        .col-second {
             float: left;
             margin: 0;
             min-height: 1px;
@@ -89,11 +89,11 @@
             width: 44%;
         }
 
-        ::content .col-second img {
+        .col-second img {
             width: 100%;
         }
 
-        ::content .col-third {
+        .col-third {
             float: left;
             margin: 0;
             min-height: 1px;
@@ -102,17 +102,17 @@
             width: 41.66666667%;
         }
 
-        ::content .col-third h4 {
+        .col-third h4 {
             font-size: 34px;
             margin-bottom: 10px;
         }
 
-        ::content .col-third h5 {
+        .col-third h5 {
             font-size: 22px;
             margin-bottom: 6px;
         }
 
-        ::content .col-third .descriptionitem {
+        .col-third .descriptionitem {
             border-bottom: 1px solid lightgrey;
             display: block;
             font-family: Minion Pro;
@@ -121,12 +121,27 @@
             margin: 28px 0;
         }
 
-        ::content .col-third .button {
+        .col-third .button {
             font-size: 23px;
             cursor: pointer;
         }
     </style>
-    <content></content>
+    <div class="row">
+        <div class="col-first">
+            <span class="month">
+                <span class="under">_</span>
+            </span>
+            <span class="day"></span>
+        </div> +
+        <div class="col-second"><img src=""></div>
+        <div class="col-third"> + 
+            <h4></h4>
+            <h5></h5>
+            <h5>Descrition</h5>
+            <p class="descriptionitem"></p>
+            <div class="button">View Event Details</div>
+        </div>
+    </div>
 </template>
 
 <script type="text/javascript" src="/scripts/event-component.js"></script>        

@@ -5,8 +5,8 @@ const source = 'bbc-news';
 const sortBy = 'latest';
 let funcs = this;
 
-export function getAllNews(){
-	fetch('https://newsapi.org/v1/articles?source=' + source + '&apiKey=' + ApiKey)
+function gAllN() {
+    fetch('https://newsapi.org/v1/articles?source=' + source + '&apiKey=' + ApiKey)
         .then((response) => response.json())
         .then((data) => {
             let index = 0;
@@ -16,14 +16,28 @@ export function getAllNews(){
             }, this);
             let elements = document.getElementsByTagName('event-general');
             for (var i = 0; i < elements.length; i++) {
-                let button = elements[i].querySelector('.button');
+                let button = elements[i].shadowRoot.querySelector('.button');
                 button.addEventListener('click', () => {
-                    fetch('https://newsapi.org/v1/articles?source=' + source + '&apiKey=' + ApiKey)
-                        .then((response) => response.json())
-                        .then((data) => button.id < data.articles.length ? formatter.createElementForAny(data.articles[button.id]): '')
-                        .catch((ex) => console.log('Parsing failed', ex));
+                    gAnyN(button.id);
                 }, false);
             }
         })
         .catch((ex) => console.log('Parsing failed', ex));
+}
+
+function gAnyN(id) {
+    fetch('https://newsapi.org/v1/articles?source=' + source + '&apiKey=' + ApiKey)
+        .then((response) => response.json())
+        .then((data) => {
+            id < data.articles.length ? formatter.createElementForAny(data.articles[id]): '';
+        })
+        .catch((ex) => console.log('Parsing failed', ex));
+}
+
+export function getAllNews(){
+    gAllN();
+}
+
+export function getAnyNews(id){
+    gAnyN(id);
 }

@@ -5,18 +5,14 @@ export function createElementForAll(elem, index)
 {
     document.querySelector(anyEventContainer).style.display = 'none';
     let newEvent = document.createElement('event-general');
-    newEvent.innerHTML = '<div class="row">'+
-                    '<div class="col-first">' +
-                        '<span class="month">' + new Date(elem.publishedAt).getMonth() +
-                            '<span class="under">_</span></span>' + 
-                        '<span class="day">' + new Date(elem.publishedAt).getDay() + 
-                        '</span></div>' +
-                    '<div class="col-second"><img src=' + elem.urlToImage + '></div>' +
-                    '<div class="col-third">' + 
-                        '<h4>' + elem.title.substring(0, 19) + '...' +
-                        '</h4><h5>' + elem.author + 
-                        '</h5><h5>Descrition</h5><p class="descriptionitem">' + elem.description.substring(0, 117) + '...' +
-                        '</p><div id=' + index + ' class="button">View Event Details</div></div></div>';
+    let root = newEvent.shadowRoot;
+    root.querySelector('.month').innerHTML = new Date(elem.publishedAt).getMonth();
+    root.querySelector('.day').innerHTML = new Date(elem.publishedAt).getDay()
+    root.querySelector('img').src = elem.urlToImage;
+    root.querySelector('h4').innerHTML = elem.title.substring(0, 19) + '...';
+    root.querySelector('h5').innerHTML = elem.author;
+    root.querySelector('.descriptionitem').innerHTML = elem.description.substring(0, 117) + '...';
+    root.querySelector('.button').id = index;
     let htmlCont = document.querySelector(allEventsContainer);
     htmlCont.appendChild(newEvent);
     htmlCont.style.display = 'block';
