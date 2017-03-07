@@ -144,4 +144,20 @@
     </div>
 </template>
 
-<script type="text/javascript" src="/scripts/event-component.js"></script>        
+<script type="text/javascript" src="lib/webcomponents-lite.js"></script>
+<script>
+    (function(){
+        var EventGeneralProto = Object.create(HTMLDivElement.prototype);
+        var importDoc = document.currentScript.ownerDocument;
+
+        EventGeneralProto.createdCallback = function() {
+            var root = this.createShadowRoot();
+            var template = importDoc.querySelector('#event-general');
+            root.appendChild(document.importNode(template.content, true));
+        };
+
+        document.registerElement('event-general', {
+            prototype: EventGeneralProto
+        });
+    })(this);
+</script>     

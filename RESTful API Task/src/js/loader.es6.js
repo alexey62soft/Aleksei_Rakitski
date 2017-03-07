@@ -1,6 +1,6 @@
 import * as newsapi from './modules/newsapi.es6'
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
     let prevEventsBtn = document.querySelector('.prev-events');
     let nextEventsBtn = document.querySelector('.next-events');
     prevEventsBtn.addEventListener('click', () => {

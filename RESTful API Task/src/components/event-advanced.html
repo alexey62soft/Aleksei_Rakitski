@@ -1,0 +1,259 @@
+<template id="event-advanced">
+    <style>
+        @font-face {
+            font-family: Balance;
+            src: url('../assets/BalanceBold.otf');
+        }
+
+        @font-face {
+            font-family: Transport;
+            src: url('../assets/TransportMedium.ttf') format('truetype');
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        *:before, *:after {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        a {
+            color: black;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .row {
+            display: block;
+            padding: 75px 0 0; 
+        }
+
+        .row:before, .row:after {
+            content: " ";
+            display: table;
+        }
+
+        .row:after {
+            clear: both;
+        }
+
+        .row .name {
+            position: relative; 
+        }
+
+        .row .name .line {
+            border-bottom: 1px solid grey;
+            content: '';
+            display: block;
+            height: 1px;
+            position: absolute;
+            top: 13px; 
+        }
+
+        .row .details {
+            color: grey;
+            float: left;
+            font-size: 21px;
+            font-style: italic;
+            min-height: 1px;
+            padding: 0 70px; 
+            position: relative;
+            width: 58.33333333%;
+        }
+
+        .row .details .name {
+            padding-bottom: 50px; 
+        }
+
+        .row .details .name .line {
+            left: 84px;
+            width: 77%; 
+        }
+
+        .row .details .info {
+            line-height: 35px;
+            padding-right: 54px; 
+        }
+
+        .row .other {
+            color: grey;
+            float: left;
+            font-size: 21px;
+            min-height: 1px;
+            padding-left: 22px; 
+            position: relative;
+            width: 41.66666667%;
+        }
+
+        .row .other .name {
+            font-style: italic;
+            padding-bottom: 37px; 
+        }
+
+        .row .other .info {
+            color: black;
+            font-family: Transport;
+            font-size: 35px;
+            line-height: 35px;
+            padding-bottom: 42px;
+            padding-right: 54px; 
+        }
+            
+        .row .other .name-title .line {
+            left: 62px;
+            width: 81%; 
+        }
+            
+        .row .other .name-author .line {
+            left: 84px;
+            width: 77%; 
+        }
+            
+        .row .other .name-date .line {
+            left: 67px;
+            width: 80%; 
+        }
+            
+        .row .other .button {
+            color: black;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Transport;
+            position: relative; 
+        }
+
+        .row .other .button::after {
+            content: "\f061";
+            font-family: 'FontAwesome';
+            font-size: 25px;
+            right: -47px;
+            position: absolute;
+            top: -2px; 
+        }
+
+        .row .clearfix {
+            padding-bottom: 60px; 
+        }
+
+        .row .clearfix:before, .row .clearfix:after {
+            content: " ";
+            display: table;
+        }
+
+        .row .clearfix:after {
+            clear: both;
+        }
+
+        .row .footer-any-event {
+            border-top: 1px solid lightgrey;
+            margin: 0 50px;
+            padding: 72px 0 84px; 
+        }
+
+        .row .footer-any-event:before, .row .footer-any-event:after {
+            content: " ";
+            display: table;
+        }
+
+        .row .footer-any-event:after {
+            clear: both;
+        }
+
+        .row .footer-any-event .collumn {
+            float: left;
+            min-height: 1px;
+            position: relative;
+            width: 33.33333333%;
+        }
+
+        .row .footer-any-event .collumn:nth-child(2) {
+            text-align: center; 
+        }
+
+        .row .footer-any-event span {
+            cursor: pointer;
+            display: inline-block;
+            font-family: Transport;
+            font-size: 28px;
+            margin: 0 20px;
+            position: relative; 
+        }
+
+        .row .footer-any-event .prev-event::before {
+            content: "\f190";
+            font-family: 'FontAwesome';
+            font-size: 50px;
+            left: -57px;
+            position: absolute;
+            top: -6px; 
+        }
+        
+        .row .footer-any-event .all-events {
+            border: 2px solid lightgrey;
+            display: inline-block;
+            margin-top: -16px;
+            padding: 15px 25px; 
+        }
+            
+        .row .footer-any-event .next-event {
+            float: right; 
+        }
+            
+        .row .footer-any-event .next-event::after {
+            content: "\f18e";
+            font-family: 'FontAwesome';
+            font-size: 50px;
+            right: -57px;
+            position: absolute;
+            top: -6px; 
+        }
+    </style>
+    <div class="row">
+        <div class="details">
+            <div class="name">Details<span class="line"></span></div>
+            <div class="info info-details"></div>
+        </div>
+        <div class="other">
+            <div class="name name-title">Title<span class="line"></span></div>
+            <div class="info info-title"></div>
+            <div class="name name-author">Author<span class="line"></span></div>
+            <div class="info info-author"></div>
+            <div class="name name-date">Date<span class="line"></span></div>
+            <div class="info info-date"></div>
+            <div class="button"><a class="full-link" href="">Go To Source</a></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="footer-any-event">
+            <div class="collumn">
+                <span class="prev-event">Previous Event</span>
+            </div>
+            <div class="collumn">
+                <span class="all-events">All Events</span>
+            </div>
+            <div class="collumn">
+                <span class="next-event">Next Event</span>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script type="text/javascript" src="lib/webcomponents-lite.js"></script>
+<script>
+    var EventAdvancedProto = Object.create(HTMLDivElement.prototype);
+    var importDoc = document.currentScript.ownerDocument;
+
+    EventAdvancedProto.createdCallback = function() {
+        var root = this.createShadowRoot();
+        var template = importDoc.querySelector('#event-advanced');
+        root.appendChild(document.importNode(template.content, true));
+    };
+
+    document.registerElement('event-advanced', {
+        prototype: EventAdvancedProto
+    });
+</script>      

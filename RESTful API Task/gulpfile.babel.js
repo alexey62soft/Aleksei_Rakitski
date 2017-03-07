@@ -89,22 +89,12 @@ gulp.task('lib', () => {
         .pipe(gulp.dest('./dist/lib/'));
 });
 
-gulp.task('components-scripts', () => {
-    return browserify({
-        entries: ['./src/components/js/event-component.es6.js']
-    })
-    .transform(babelify)
-    .bundle()
-    .pipe(source("event-component.js"))
-    .pipe(gulp.dest(jsPaths.dest));
-});
-
 gulp.task('components-html', () => {
     return gulp.src('./src/components/*.html')
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('default', ['browser-sync', 'styles', 'scripts', 'img', 'html', 'lib', 'components-scripts', 'components-html', 'watch'], () => {
+gulp.task('default', ['browser-sync', 'styles', 'scripts', 'img', 'html', 'lib', 'components-html', 'watch'], () => {
     let buildAssets = gulp.src('./assets/**/*')
         .pipe(gulp.dest('./dist/assets/'));
 		
@@ -125,5 +115,5 @@ gulp.task('watch', () => {
     gulp.watch('./src/*.html', ['html'], browserSync.reload);
     gulp.watch('./src/components/*.html', ['components-html'], browserSync.reload);
     gulp.watch('./src/lib/**/*', ['lib'], browserSync.reload);
-    gulp.watch(jsPaths.src, ['scripts', 'components-scripts'], browserSync.reload);
+    gulp.watch(jsPaths.src, ['scripts'], browserSync.reload);
 });

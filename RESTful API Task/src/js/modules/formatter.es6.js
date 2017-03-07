@@ -21,15 +21,15 @@ export function createElementForAll(elem, index)
 export function createElementForAny(elem)
 {
     document.querySelector('.events').style.display = 'none';
-    let text = '<div><ul><li>Title: ' + elem.title + 
-        '</li><li>Author: ' + elem.author + 
-        '</li><li>Published at: ' + elem.publishedAt + 
-        '</li><li>Description: ' + elem.description + 
-        '</li><li>Url: ' + elem.url + 
-        '<li><img style="width: 200px" src=' + elem.urlToImage +
-        '></li></ul></div>';
-    var htmlcont = document.querySelector(anyEventContainer);
-    htmlcont.innerHTML = "";
-    htmlcont.insertAdjacentHTML('beforeEnd', text);
+    let newEvent = document.createElement('event-advanced');
+    let root = newEvent.shadowRoot;
+    root.querySelector('.info-date').innerHTML = new Date(elem.publishedAt).toDateString();
+    root.querySelector('.full-link').href = elem.url;
+    root.querySelector('.info-title').innerHTML = elem.title;
+    root.querySelector('.info-author').innerHTML = elem.author;
+    root.querySelector('.info-details').innerHTML = elem.description;
+    var htmlCont = document.querySelector(anyEventContainer);
+    htmlCont.innerHTML = '';
+    htmlCont.appendChild(newEvent);
     document.querySelector(anyEventContainer).style.display = 'block';
 }
